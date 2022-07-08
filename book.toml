@@ -1,0 +1,7 @@
+[book]
+title = "KSS-PC-Club docs"
+author = "KSS-PC-Club"
+description = "KSS PC Club の部活内ドキュメント"
+language = "ja"
+multilingual = false
+src = "src"
