@@ -83,8 +83,6 @@ This is new line.
 ```text
 #### Big
 
-some text.
-
 ###### Small
 ```
 
