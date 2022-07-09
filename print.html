@@ -156,7 +156,167 @@
 <p>（追記予定）</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="部活動紹介"><a class="header" href="#部活動紹介">部活動紹介</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="使い方"><a class="header" href="#使い方">使い方</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="リンク"><a class="header" href="#リンク">リンク</a></h1>
+<p>ここでは、このドキュメントの編集方法を紹介します。
+そもそもこのドキュメントは Rust で書かれた mdbook というものを使用していますので、そちらのドキュメント<sup class="footnote-reference"><a href="#1">1</a></sup>を参照していただくこともできます。
+一部の Markdown 記法が使用できない場合や、数式の記法が独特なため、一度目を通しておくと良いでしょう。</p>
+<h2 id="解説の前に"><a class="header" href="#解説の前に">解説の前に</a></h2>
+<p>こちらの解説では、Git や Github に関する説明は省略します。それらの使い方を確認したい場合は、茨城県プログラミングエキスパート事業で使用している<a href="https://nnn.ed.nico">N 予備校</a>や、<a href="https://skills.github.com/">GithubSkills</a>などをご覧ください。
+また、必須ではありませんが、部活の Github Organisation に入ることもお勧めします。</p>
+<h2 id="github-からリポジトリをクローンする"><a class="header" href="#github-からリポジトリをクローンする">Github からリポジトリをクローンする</a></h2>
+<p>まずは、Github から、このドキュメントの元データが書かれたリポジトリをクローンしましょう。<a href="https://github.com/kss-pc-club/doc">リポジトリ</a>にアクセスしてください。右上の Github のマークからもアクセスすることができます。</p>
+<p>終わったら、ローカルのクローンしたリポジトリにアクセスしてみましょう。</p>
+<h2 id="ディレクトリ構成"><a class="header" href="#ディレクトリ構成">ディレクトリ構成</a></h2>
+<p>mdbook では、markdown ファイルでそれぞれの記事を作成します。<code>src</code>ディレクトリ以下に、ドキュメントの構成に必要なファイルを配置していて、markdown ファイルの他にも、css ファイルや画像ファイルなどを含めることができ、これらを使用して記事を書くことができます。</p>
+<p>また、ディレクトリをきれいに管理するために、トピックごとにサブディレクトリを作成して管理をする方針をとっています。みなさんのご協力をお願いします。以下は、2022/7/29 時点の例です。</p>
+<pre><code>.
+├── book.toml
+└── src
+    ├── SUMMARY.md
+    ├── about.md
+    ├── club-introduction.md
+    ├── images
+    │   └── homepage-screenshot.png
+    ├── link.md
+    ├── magazine
+    │   ├── 2022
+    │   │   ├── contents
+    │   │   └── index.md
+    │   └── index.md
+    ├── self-introduction
+    │   ├── 10th
+    │   ├── 11th
+    │   ├── 3rd
+    │   ├── 4th
+    │   ├── 5th
+    │   ├── 6th
+    │   │   └── eno1220
+    │   │       └── index.md
+    │   ├── 7th
+    │   ├── 8th
+    │   ├── 9th
+    │   ├── README.md
+    │   └── index.md
+    └── usage.md
+
+</code></pre>
+<h2 id="記事を書く"><a class="header" href="#記事を書く">記事を書く</a></h2>
+<p>markdown ファイルを作成して、記事を書き始めましょう。なお、以下のような記法が可能です。主なものだけ抜粋して紹介します。詳細については、<a href="https://rust-lang.github.io/mdBook/format/markdown.html">こちら</a>をご覧ください。</p>
+<h3 id="文字と段落"><a class="header" href="#文字と段落">文字と段落</a></h3>
+<pre><code class="language-text">This is example.
+
+This is new line.
+</code></pre>
+<p>以下のようになります。</p>
+<hr />
+<p>This is example.</p>
+<p>This is new line.</p>
+<hr />
+<h3 id="見出し"><a class="header" href="#見出し">見出し</a></h3>
+<p>見出しは、<code>#</code>マーカーを使用し、多く使うほど小さく表示されることを意味します。</p>
+<pre><code class="language-text">#### Big
+
+some text.
+
+###### Small
+</code></pre>
+<hr />
+<h4 id="big"><a class="header" href="#big">Big</a></h4>
+<h5 id="small"><a class="header" href="#small">Small</a></h5>
+<hr />
+<h3 id="リスト"><a class="header" href="#リスト">リスト</a></h3>
+<pre><code class="language-text">* apple
+* google
+* meta
+
+1. C++
+1. C
+1. Python
+</code></pre>
+<hr />
+<ul>
+<li>apple</li>
+<li>google</li>
+<li>meta</li>
+</ul>
+<ol>
+<li>C++</li>
+<li>C</li>
+<li>Python</li>
+</ol>
+<hr />
+<h3 id="リンク"><a class="header" href="#リンク">リンク</a></h3>
+<p>他のファイルへは相対パスでリンクを書くことができます。</p>
+<pre><code class="language-text">たとえば [公式サイト](https://kss-pc.club).
+
+詳しくは [こちら](link.md).
+
+このドキュメントのURLは: &lt;https://doc.kss-pc.club&gt;.
+</code></pre>
+<hr />
+<p>たとえば <a href="https://kss-pc.club">公式サイト</a>.</p>
+<p>詳しくは <a href="link.html">こちら</a>.</p>
+<p>このドキュメントの URL は: <a href="https://doc.kss-pc.club">https://doc.kss-pc.club</a>.</p>
+<hr />
+<h3 id="コードブロック"><a class="header" href="#コードブロック">コードブロック</a></h3>
+<p>コードブロックは、以下のように<code>```</code>で囲んで記述します。主要な言語にはシンタックスハイライトが対応しています。</p>
+<pre><code class="language-text">
+```cpp
+
+#include &quot;iostream&quot;
+
+int main(){
+    std::cout &lt;&lt; &quot;apple&quot; &lt;&lt; std::endl;
+}
+
+```
+
+</code></pre>
+<pre><code class="language-cpp">
+#include &quot;iostream&quot;
+
+int main(){
+    std::cout &lt;&lt; &quot;apple&quot; &lt;&lt; std::endl;
+}
+
+</code></pre>
+<p>mdbook では、Rust のコードを直接実行できます。コードブロックにマウスオーバーすると出てくる 3 つのアイコンの中で、真ん中のアイコンを押すと実行することができます。</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>println!(&quot;Hello KSS PC Club&quot;);
+<span class="boring">}
+</span></code></pre></pre>
+<h2 id="summarymd-に記事を登録する"><a class="header" href="#summarymd-に記事を登録する">SUMMARY.md に記事を登録する</a></h2>
+<p>mdbook では、ただ記事を書いただけでは表示させることができません。<code>src</code>以下の<code>SUMMARY.md</code>に記事のファイルへのリンクの記述を書く必要があります。逆に言えば、ファイルを記述しないことで、作成中の記事が web サイトからは閲覧できないようにすることも可能です。（そんなことをするタイミングがあるかと言えば...）</p>
+<pre><code class="language-markdown">[はじめに](./about.md)
+[部活動紹介](./club-introduction.md)
+[使い方](./usage.md)
+[リンク](./link.md)
+
+- [自己紹介](./self-introduction/index.md)
+  - [eno1220](./self-introduction/6th/eno1220/index.md)
+- [部誌](./magazine/index.md)
+  - [2022](./magazine/2022/index.md)
+    - [はじめに](./magazine/2022/contents/foreword.md)
+    - [この部誌を支える技術](./magazine/2022/contents/about-vivliostyle/index.md)
+</code></pre>
+<p>リンクは以上のように記述します。階層化することが可能で、自動で章の番号を振り分けてくれます。ただし、一度リスト形式で記述すると、それ以降はリスト形式での記述が許されないので注意してください。</p>
+<h2 id="プレビューする"><a class="header" href="#プレビューする">プレビューする</a></h2>
+<p>プレビューをしたい場合は、mdbook をローカルにインストールする必要があります。インストールには cargo が必要ですので、インストールされていない方はまずインストールをしましょう。
+mdbook のインストールは以下の通りです。</p>
+<pre><code class="language-shell">cargo install mdbook
+</code></pre>
+<p>mdbook はローカルサーバを立ててプレビューが可能です。以下のコマンドを実行すると、自動でブラウザが開きます。なお、ビルドされたファイル群は<code>book</code>ディレクトリ以下に展開されています。</p>
+<pre><code class="language-shell">mdbook serve --open
+</code></pre>
+<h2 id="github-に-push-する"><a class="header" href="#github-に-push-する">Github に push する</a></h2>
+<p>プレビューができたら、Github に push しましょう。push ができたら、Github Actions によって自動でビルド&amp;デプロイされ、2 分程度でサイトに反映されるはずです。</p>
+<h2 id="おわりに"><a class="header" href="#おわりに">おわりに</a></h2>
+<p>お疲れ様でした！みなさん、どんどん、記事を投稿しましょう！</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://rust-lang.github.io/mdBook/">https://rust-lang.github.io/mdBook/</a></p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="リンク-1"><a class="header" href="#リンク-1">リンク</a></h1>
 <p>KSS PC Club の運営するアカウントやサイトへのリンク一覧です。</p>
 <h3 id="公式-web-サイト"><a class="header" href="#公式-web-サイト">公式 web サイト</a></h3>
 <p><img src="./images/homepage-screenshot.png" alt="homepage-screenshot" /></p>
@@ -210,7 +370,7 @@ KSS PC Club では主に Github を使用して作業を行なっています。
 </ul>
 <p>いずれも初心者~中級者くらいです。
 また、(neo)vim や Linux をほんの少しだけ触ることができます。</p>
-<h2 id="リンク-1"><a class="header" href="#リンク-1">リンク</a></h2>
+<h2 id="リンク-2"><a class="header" href="#リンク-2">リンク</a></h2>
 <ul>
 <li><a href="https://github.com/eno1220">Github</a></li>
 <li><a href="https://atcoder.jp/users/eno1220">AtCoder</a></li>
@@ -382,7 +542,7 @@ $ yarn build
 </code></pre>
 <p><code>public/book.pdf</code> が作られます。</p>
 <p>入稿用のデータを <code>yarn press-ready</code> というコマンドで作ることができますが、ghostscript と poppler-utils のインストールが必要なので注意してください。</p>
-<h2 id="おわりに"><a class="header" href="#おわりに">おわりに</a></h2>
+<h2 id="おわりに-1"><a class="header" href="#おわりに-1">おわりに</a></h2>
 <p>ある程度しっかりとした本を既に知っている技術で作れました。</p>
 <p>CSS 組版で本を作りたい！Markdown で本を書きたい！...そんな方はぜひ Vivliostyle で始めてみませんか？</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="icpc-へのお誘い"><a class="header" href="#icpc-へのお誘い">ICPC へのお誘い</a></h1>
@@ -715,7 +875,7 @@ info.description; // 'Opera 11.52 (identifying as Firefox 4.0) on Mac OS X 10.7.
 カメラの画像の透過率を 100%→0%→100%と変化させて、flash というアニメーションを作っています。
 後は上手に点滅しているように見せるために
 1.0 秒後に 0.3 秒間等しい速度で flash を使えとカメラのイラストに指定すれば完成です。</p>
-<h2 id="おわりに-1"><a class="header" href="#おわりに-1">おわりに</a></h2>
+<h2 id="おわりに-2"><a class="header" href="#おわりに-2">おわりに</a></h2>
 <p>いかがでしたか、よければ今後の糧にでもしていただけると幸いです。
 近年、情報分野の発達は目覚ましいので、こんなものよりもより高度な技術でみなさんを騙す人が出てくることは必至でしょう。
 そのためにもぜひ自ら情報の力をつけてみてはいかがでしょうか。</p>
@@ -1019,7 +1179,7 @@ $$\beta = \alpha \quad (\because \alpha = f^{-1}(0))$$</p>
 <p>ニュートン法の数列 ${x_n}$ は「 $f(x_0) &gt; 0, f(a) &lt; 0, f'(x) &gt; 0, f''(x) &gt; 0$ の全てを満たす」とき
 $f(x) = 0$ の解 $\alpha \quad (a &lt; \alpha &lt; x_0)$ に収束する。$\quad \blacksquare$</p>
 </blockquote>
-<h2 id="おわりに-2"><a class="header" href="#おわりに-2">おわりに</a></h2>
+<h2 id="おわりに-3"><a class="header" href="#おわりに-3">おわりに</a></h2>
 <p>プログラミングと聞くと、難しくて初心者にはできないものだと考えてしまうかもしれませんが、この記事のように簡単な計算や、文字を表示させるなど、単純な動作だけなら今すぐにでも実装・実行できます。</p>
 <p>それに、今の時代コンパイラはオンライン上のものを使うこともでき、インターネットで検索すれば実装方法も簡単に見つけることができますし、自分でアレンジすることができます。</p>
 <p>ぜひ、皆さんも簡単なプログラムから初めて、自分の作りたいものを作りましょう！</p>
@@ -1454,7 +1614,7 @@ pub fn main() void{
 </code></pre>
 <p>上のサンプルコードでは<code>score</code>関数を作成しました。関数は、<code>fn 関数名(引数) 戻り値の型{}</code>というようになります。<code>score</code>関数では、a と b の引数をとり、戻り値は<code>i32</code>型になっています。また、引数は<code>識別子:型</code>というようにかくことができ、ここでは a、b ともに<code>i32</code>型の変数になっていることがわかります。
 ところで、main 関数には<code>pub</code>というキーワードが書かれていますが、score 関数には書かれていません。<code>pub</code>属性は、他の Zig ファイルから<code>@import</code>された時に利用される関数・変数につけるものです。ただし、main 関数に限っては<code>pub</code>属性をつけるルールになっているので<code>pub</code>をつけています。</p>
-<h2 id="おわりに-3"><a class="header" href="#おわりに-3">おわりに</a></h2>
+<h2 id="おわりに-4"><a class="header" href="#おわりに-4">おわりに</a></h2>
 <p>今回は、Zig の基本的な文法を紹介しました。本当はもっと書きたかったのですが、計画性のなさから締切を過ぎてしまい、これ以上記事を書く時間がないのでこれでおしまいにします。すみません。しかしこれだけでは Zig の機能がほとんど伝わっていないので、以下に紹介していない主な機能（特徴）を記します。</p>
 <ul>
 <li>C 言語と ABI 互換がある</li>
@@ -1506,7 +1666,7 @@ pub fn main() void{
 <h3 id="高いカスタマイズ性"><a class="header" href="#高いカスタマイズ性">高いカスタマイズ性</a></h3>
 <p>Windows にはカスタマイズ不可能な部分が多くあります。システムフォントやウィンドウを操作した時の挙動はさることながら、エディションによっては運用の根幹に関わる Windows Update の可否すら自由に決められません。GNU/Linux ディストリビューションではこのようなことは一切なく、ユーザーが望むのであれば (デスクトップ環境にもよりますが) 見た目や挙動を非常に幅広くカスタマイズできますし、パッケージマネージャを明示的に操作しない限り勝手にアップデートのために再起動されることもありません。</p>
 <p>このように、Arch Linux は Windows に対しても、他の GNU/Linux ディストリビューションに対しても、非常に優れた側面を持つディストリビューションなのです。</p>
-<h2 id="おわりに-4"><a class="header" href="#おわりに-4">おわりに</a></h2>
+<h2 id="おわりに-5"><a class="header" href="#おわりに-5">おわりに</a></h2>
 <p>ここまで拙文を読んでいただきありがとうございました。他の方の記事と比べると技術色はかなり薄くなってしまったかと思いますが、本記事を通じて 1 人でも Arch Linux やその他の GNU/Linux ディストリビューションに興味を持ってくれる人がいれば嬉しい限りです。</p>
 <p>私が Arch Linux を知ったのは 2020 年でした。初めはインストールの段階からコマンドラインで操作する必要があるという硬派な雰囲気に怖気づいて手を出せずにいたのですが、それまで使っていた Ubuntu と Windows 10 Insider Preview にも飽きつつあったので思い切ってメイン PC にインストールしてみたのです。それからおよそ 2 年。途中で Windows 11 を入れたりもしましたが、やはり Arch Linux の快適さには敵わず、今も普段使いの OS として活躍しています。本記事では Arch Linux の素晴らしさについて語らせていただきましたが、これに私の主観が多分に含まれていることは疑いようがありません。ですから、ぜひ自分に合った OS を探してみてください。私にとっての Arch Linux のように、皆さんがそれぞれ “とりあえず Windows” ではない、本当に使いたいと思えるような運命の OS に出会えることを願っています。</p>
 <p>最後に、PC 部のかねてよりの目標であった部誌の発行を実現し、また私にその記念すべき第 1 号への寄稿の機会を与えてくださった部長に敬意と感謝 (そして 3 度も締切を踏み倒したことへの謝意) を表明して、本記事の結びとさせていただきます。</p>
