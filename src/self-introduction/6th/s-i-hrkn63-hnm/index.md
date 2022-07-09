@@ -22,6 +22,7 @@
 - Scss
 - Python
 - Pug
+- Docker
 - DaVinchi Resolve
 - Github/Git
 - Webデザイン
