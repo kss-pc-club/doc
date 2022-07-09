@@ -20,7 +20,7 @@
 
 ### 支払い期限タイマーの表示
 
-![ハッタリタイマー](./image1.png){width=250}
+![ハッタリタイマー](./image1.png)
 
 こんな感じでクリックした人を焦らせて個人情報入力させようという魂胆です。
 冷静に見てみるとおもちゃのような仕組みです。
@@ -82,7 +82,7 @@ setInterval(countdown,1000);
 
 上部のように書くと、こんな感じに抜き取ることができます。
 
-![抜き取り使用例](./image2.png){width=250}
+![抜き取り使用例](./image2.png)
 
 ```js
 // on IE10 x86 platform preview running in IE7 compatibility mode on Windows 7 64 bit edition
@@ -121,7 +121,7 @@ info.description; // 'Opera 11.52 (identifying as Firefox 4.0) on Mac OS X 10.7.
 謎のシャッター音と点滅で「もしかして写真を撮られたのかも」と
 思うかもしれませんがそんなことありません。演出です。
 
-![パシャ](./image3.png){width=250}
+![パシャ](./image3.png)
 
 今では Web ポリシー改定によってシャッター音を急に鳴らすことはかなり難しくなっています。
 できないことはありませんが、実装するための SPA(シングルページアプリケーション)開発者・経験者が少ないらしいので、

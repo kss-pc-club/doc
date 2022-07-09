@@ -15,3 +15,5 @@
 | キーボードが欲しかったので自作してみた | Nagaso.cpp          | [Markdown](./contents/keyboard/index.md)                     | [PDF](https://repos.kss-pc.club/book-2022/book-v.pdf#page=42) |
 | プログラミング言語 Zig の基本文法      | eno1220             | [Markdown](./contents/eno1220/index.md)                      | [PDF](https://repos.kss-pc.club/book-2022/book-v.pdf#page=55) |
 | 始めよう、ArchLinux                    | 香風智乃            | [Markdown](./contents/an_introduction_to_archlinux/index.md) | [PDF](https://repos.kss-pc.club/book-2022/book-v.pdf#page=66) |
+
+注意:Markdown 版では脚注の表示をオフにしています。脚注が見たい場合には PDF 版で閲覧してください
