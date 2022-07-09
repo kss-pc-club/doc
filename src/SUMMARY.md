@@ -7,6 +7,7 @@
 
 - [自己紹介](./self-introduction/index.md)
   - [eno1220](./self-introduction/6th/eno1220/index.md)
+  - [hrkn63-hnm](./self-introduction/6th/s-i-hrkn63-hnm/index.md)
 - [部誌](./magazine/index.md)
   - [2022](./magazine/2022/index.md)
     - [はじめに](./magazine/2022/contents/foreword.md)
