@@ -1,7 +1,20 @@
 # Summary
 
 [はじめに](./about.md)
+[部活動紹介](./club-introduction.md)
+[使い方](./usage.md)
 [リンク](./link.md)
 
 - [自己紹介](./self-introduction/index.md)
   - [eno1220](./self-introduction/6th/eno1220/index.md)
+- [部誌](./magazine/index.md)
+  - [2022](./magazine/2022/index.md)
+    - [はじめに](./magazine/2022/contents/foreword.md)
+    - [この部誌を支える技術](./magazine/2022/contents/about-vivliostyle/index.md)
+    - [ICPC へのお誘い](./magazine/2022/contents/icpc-invitation/index.md)
+    - [ワンクリック詐欺サイト解剖してみた](./magazine/2022/contents/hnm2022/index.md)
+    - [ニュートン法で近似をしよう](./magazine/2022/contents/newtons-method/index.md)
+    - [基本/応用技術者試験体験記](./magazine/2022/contents/fe-ap/index.md)
+    - [キーボードが欲しかったので自作してみた](./magazine/2022/contents/keyboard/index.md)
+    - [プログラミング言語 Zig の基本文法](./magazine/2022/contents/eno1220/index.md)
+    - [始めよう、ArchLinux](./magazine/2022/contents/an_introduction_to_archlinux/index.md)

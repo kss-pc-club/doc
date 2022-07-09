@@ -5,3 +5,8 @@ description = "KSS PC Club の部活内ドキュメント"
 language = "ja"
 multilingual = false
 src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/kss-pc-club/doc"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/kss-pc-club/doc/{path}"

@@ -23,4 +23,12 @@ KSS PC Club では主に Github を使用して作業を行なっています。
 - Discord
 - Slack
 
-（制作物等追加予定）
+### 主な制作物
+
+1. 公式サイト
+   ![homepage-screenshot](./images/homepage-screenshot.png)
+2. KSS Typing
+   [https://typing.kss-pc.club/](https://typing.kss-pc.club/)
+3. 文化祭待ち時間モニター
+
+4. 部誌
