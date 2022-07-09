@@ -168,10 +168,10 @@ info.description; // 'Opera 11.52 (identifying as Firefox 4.0) on Mac OS X 10.7.
 
 ## 参考・参照
 
-- https://www.webdlab.com/jquery/jquery-new-date/
-- https://tcd-theme.com/2021/08/javascript-countdowntimer.html
-- https://qiita.com/TD12734/items/671064e8fce75faea98d
-- https://teratail.com/questions/265276
-- http://kentaro-shimizu.com/lecture/fraud/pay.html
-- https://coco-factory.jp/ugokuweb/
-- https://deadlinetimer.com/
+- <https://www.webdlab.com/jquery/jquery-new-date/>
+- <https://tcd-theme.com/2021/08/javascript-countdowntimer.html>
+- <https://qiita.com/TD12734/items/671064e8fce75faea98d>
+- <https://teratail.com/questions/265276>
+- <http://kentaro-shimizu.com/lecture/fraud/pay.html>
+- <https://coco-factory.jp/ugokuweb/>
+- <https://deadlinetimer.com/>

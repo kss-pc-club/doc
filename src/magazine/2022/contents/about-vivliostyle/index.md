@@ -5,17 +5,22 @@
 ## はじめに
 
 こんにちは、5 期生の Ryoga.exe です。
-この部誌は今年からの初の試みということもあり折角なので (？) 今回はこの部誌を支える技術についてお話しようかと思います。この部誌については GitHub 上で管理されているため、そのリポジトリも合わせてご覧ください。<span class="footnote">https://github.com/kss-pc-club/book-2022</span>
+この部誌は今年からの初の試みということもあり折角なので (？) 今回はこの部誌を支える技術についてお話しようかと思います。この部誌については GitHub 上で管理されているため、そのリポジトリも合わせてご覧ください。[^1]
+
+[^1]: <https://github.com/kss-pc-club/book-2022>
 
 ## Vivliostyle について
 
-本書は HTML & CSS で組版ができる `Vivliostyle`<span class="footnote">https://vivliostyle.org/ja/</span> の `Create Book` <span class="footnote">https://docs.vivliostyle.org/#/ja/create-book</span>というものを使って書かれています。
+本書は HTML & CSS で組版ができる `Vivliostyle`[^2] の `Create Book`[^3]というものを使って書かれています。
 
-![Vivliostyle のロゴ](./vivliostyle-logo.png){width=250}
+![Vivliostyle のロゴ](./vivliostyle-logo.png)
 
 Vivliostyle は CSS 組版という Web 標準技術をベースにした、自動組版システムのオープンソースプロジェクトです。
 
 CSS 組版は HTML と CSS をベースにしているので、普段から HTML/CSS を扱っている人にとっては Vivliostyle のプロダクトが比較的手軽に感じるでしょう。
+
+[^2]: [https://vivliostyle.org/ja/](https://vivliostyle.org/ja/) <br>
+[^3]: [https://docs.vivliostyle.org/#/ja/create-book](https://docs.vivliostyle.org/#/ja/create-book)
 
 ## Vivliostyle を選択した理由
 
@@ -28,7 +33,9 @@ CSS 組版は HTML と CSS をベースにしているので、普段から HTML
 ## VFM について
 
 Create Book がサポートする Markdown 方言は、Vivliostyle Flavored Markdown (VFM) です。
-詳細は公式ドキュメント<span class="footnote">https://vivliostyle.github.io/vfm/#/ja/vfm</span>を参照してください。
+詳細は公式ドキュメント[^4]を参照してください。
+
+[^4]: [https://vivliostyle.github.io/vfm/#/ja/vfm](https://vivliostyle.github.io/vfm/#/ja/vfm)
 
 今回はこの VFM でサポートされている記法について、ざっくりとご紹介します。
 
@@ -58,7 +65,7 @@ title: セロ弾きのゴーシュ
 
 ### ルビ
 
-`{親文字|ヨミ}` とすることでルビが振れます。{便利|べんり}。~~{悔やむ|ミライ}と書いてミライと読ませることもできますね！~~
+`{親文字|ヨミ}` とすることでルビが振れます。<ruby>便利<rt>べんり</rt></ruby>。~~<ruby>悔やむ<rt>ミライ</rt></ruby>と書いてミライと読ませることもできますね！~~
 
 ### 脚注 (後注)
 
