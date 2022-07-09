@@ -12,3 +12,5 @@ git-repository-url = "https://github.com/kss-pc-club/doc"
 git-repository-icon = "fa-github"
 edit-url-template = "https://github.com/kss-pc-club/doc/tree/main/{path}"
 mathjax-support = true
+cname = "doc.kss-pc.club"
+input-404 = "404.md"
