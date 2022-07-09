@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>キーボードが欲しかったので自作してみた - KSS-PC-Club docs</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="KSS PC Club の部活内ドキュメント">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../../../../favicon.svg">
+                        <link rel="shortcut icon" href="../../../../favicon.png">
+                <link rel="stylesheet" href="../../../../css/variables.css">
+        <link rel="stylesheet" href="../../../../css/general.css">
+        <link rel="stylesheet" href="../../../../css/chrome.css">
+                <link rel="stylesheet" href="../../../../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../../../../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../../highlight.css">
+        <link rel="stylesheet" href="../../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../../about.html">はじめに</a></li><li class="chapter-item expanded affix "><a href="../../../../club-introduction.html">部活動紹介</a></li><li class="chapter-item expanded affix "><a href="../../../../usage.html">使い方</a></li><li class="chapter-item expanded affix "><a href="../../../../link.html">リンク</a></li><li class="chapter-item expanded "><a href="../../../../self-introduction/index.html"><strong aria-hidden="true">1.</strong> 自己紹介</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../self-introduction/6th/eno1220/index.html"><strong aria-hidden="true">1.1.</strong> eno1220</a></li></ol></li><li class="chapter-item expanded "><a href="../../../../magazine/index.html"><strong aria-hidden="true">2.</strong> 部誌</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../magazine/2022/index.html"><strong aria-hidden="true">2.1.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/foreword.html"><strong aria-hidden="true">2.1.1.</strong> はじめに</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/about-vivliostyle/index.html"><strong aria-hidden="true">2.1.2.</strong> この部誌を支える技術</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/icpc-invitation/index.html"><strong aria-hidden="true">2.1.3.</strong> ICPC へのお誘い</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/hnm2022/index.html"><strong aria-hidden="true">2.1.4.</strong> ワンクリック詐欺サイト解剖してみた</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/newtons-method/index.html"><strong aria-hidden="true">2.1.5.</strong> ニュートン法で近似をしよう</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/fe-ap/index.html"><strong aria-hidden="true">2.1.6.</strong> 基本/応用技術者試験体験記</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/keyboard/index.html" class="active"><strong aria-hidden="true">2.1.7.</strong> キーボードが欲しかったので自作してみた</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/eno1220/index.html"><strong aria-hidden="true">2.1.8.</strong> プログラミング言語 Zig の基本文法</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/an_introduction_to_archlinux/index.html"><strong aria-hidden="true">2.1.9.</strong> 始めよう、ArchLinux</a></li></ol></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">KSS-PC-Club docs</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        <a href="https://github.com/kss-pc-club/doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                                        <a href="https://github.com/kss-pc-club/doc/src/magazine/2022/contents/keyboard/index.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="キーボードが欲しかったので自作してみた"><a class="header" href="#キーボードが欲しかったので自作してみた">キーボードが欲しかったので自作してみた</a></h1>
+<p><span class="author">Nagaso.cpp</span></p>
+<h2 id="はじめに"><a class="header" href="#はじめに">はじめに</a></h2>
+<p>知っている人はこんにちは。知らない人もこんにちは。6 期生の Nagaso.cpp です。
+今回は初めて自作キーボードに挑戦してみました。元々何かしらのハードウェアを自作してみたいなと思っていて、本当は PC を自作するつもりでしたが予算が足りなさ過ぎて断念しました。代わりに、PC と同じく欲しいと思っていたキーボードを自作することにしました。自作というものはなかなか面白いもので、今回はその楽しさを皆さんにもぜひ知ってもらいたく、ここに記すことにします。</p>
+<h2 id="必要なパーツについて"><a class="header" href="#必要なパーツについて">必要なパーツについて</a></h2>
+<p>ここでは、今回購入したパーツを紹介します。パーツはすべて台東区にある遊舎工房という自作キーボード専門店の実店舗で購入しました。ホームページから通販で購入することもできます。<span class="footnote">https://shop.yushakobo.jp/</span>パーツ選びにあたっては、ほぼすべて店員の方が手伝って下さいました。ありがとうございました。実店舗だと店員の方に相談すれば間違いないのがいいですね。おすすめです。</p>
+<p>さて、キーボードは、<strong>PCB 基板</strong>、<strong>スタビライザー</strong>、<strong>キースイッチ</strong>、<strong>キーキャップ</strong>、<strong>ケース</strong>、<strong>プレート</strong>の 6 つのパーツから構成されます。それぞれ併せて解説します。</p>
+<h3 id="pcb-基板"><a class="header" href="#pcb-基板">PCB 基板</a></h3>
+<p>名前通り基盤です。これに後述のパーツを取り付けていきます。基盤は、日本で使われている日本語(JIS)配列用と、海外で使われている英語(US)配列用の二種類があります。今回は US 配列用のもので、普段私たちが使い慣れているものとは若干キーの配列が異なります。また、US 配列の中にも配列の種類が種類が二つあり、基板によって対応する配列が異なります。</p>
+<p>さて、今回は <strong>DZ60 REV 3.0 type-c</strong> というものを購入。よくあるゲーミングキーボードのようにピカピカ光らせることができるタイプになります。また、この基盤は 60%サイズとなっていて、テンキーや矢印キー、ファンクションキーなどがないコンパクトなタイプになります。ちなみに、設定をすることでこれらのキーは他のキーに自由に割り当てることができます。<br />
+商品ページはこちら ↓<br />
+https://shop.yushakobo.jp/products/dz60?variant=37665274855585</p>
+<p><img src="pcb.png" alt="PCB基板" />{width=300}</p>
+<h3 id="スタビライザー"><a class="header" href="#スタビライザー">スタビライザー</a></h3>
+<p>このパーツは、PCB 基板に取り付けることで、スペースキーなどの横に長いキーを支える役割をします。金属棒が使われているため、キーを押下したときに若干金属音が鳴る場合がありますが、高品質なものを使ったり、潤滑剤を塗ったりすることで改善できます。<del>私はお金がなくてケチりました。</del><br />
+商品ページはこちら ↓<br />
+https://shop.yushakobo.jp/collections/all-keyboard-parts/products/a0500st</p>
+<p><img src="stabilizer.JPG" alt="スタビライザー" />{width=300}</p>
+<h3 id="キースイッチ"><a class="header" href="#キースイッチ">キースイッチ</a></h3>
+<p>各キーのスイッチ部分です。今回はメカニカルキーボードと呼ばれる種類のキーボードに使われるものになります。スイッチの種類によって真ん中のスイッチ部分（今回であれば白い部分）の色が異なり、打鍵感も様々なものがあります。Cherry 社の「赤軸」「青軸」「茶軸」「黒軸」などが有名ですね。そのほかにも様々な会社が独自のキースイッチを開発・販売しており、その種類数はゆうに 100 を超えます。そのため、スイッチ選びは自作キーボードの醍醐味の一つと言えます。</p>
+<p>今回は<strong>Tecsee</strong>社の<strong>Blue Sky Switch</strong>をチョイス。Cherry 社の茶軸に似たばねの重さと、青軸のようなクリッキー感を持ち合わせたもので、実店舗で様々な種類のスイッチを比べたうえで、この打鍵感がとても好きだったので選びました。<br />
+商品ページはこちら ↓<br />
+https://shop.yushakobo.jp/collections/all-switches/products/3973</p>
+<p><img src="keyswitch.JPG" alt="キースイッチ" />{width=300}</p>
+<h3 id="キーキャップ"><a class="header" href="#キーキャップ">キーキャップ</a></h3>
+<p>普段私たちがタイピングをするときに、指に触れる部分です。キースイッチに取り付けます。自作キーボード用のキーキャップもまた様々なデザインがあり、このキーキャップ選びもまた自作キーボードの醍醐味のひとつです。塗装してオリジナルのデザインを作る人もいます。今回は、<strong>PG PBT Macaron Keycaps set</strong> をチョイス。結構おしゃれな感じのものを選びました。<br />
+商品はこちら ↓<br />
+https://shop.yushakobo.jp/collections/keycaps/products/pg-pbt-macaron-keycaps-set</p>
+<p><img src="keycap.JPG" alt="キーキャップ" />{width=300}</p>
+<h3 id="ケース"><a class="header" href="#ケース">ケース</a></h3>
+<p>PCB 基板にいろいろ取り付けた後、それをはめ込むケースです。材質はいろいろありますが、今回は~~ケチって~~節約して安めのプラスチックのものにしました。基板の大きさにあったものを買わないと基盤がはまらなくて悲惨なことになるので気をつけましょう。今回の基盤は 60%のものなので、60%用のを購入。<br />
+商品はこちら ↓<br />
+https://shop.yushakobo.jp/collections/case/products/60-plastic-case</p>
+<p><img src="case.JPG" alt="ケース" />{width=300}</p>
+<h3 id="プレート"><a class="header" href="#プレート">プレート</a></h3>
+<p>キースイッチを固定・安定させるための部品です。</p>
+<p><img src="plate.JPG" alt="プレート" />{width=300}</p>
+<p>また、今回の制作にあたっていくつか工具が必要なので、それも紹介します。</p>
+<h3 id="はんだごて一式"><a class="header" href="#はんだごて一式">はんだごて一式</a></h3>
+<p>キースイッチを基板に取り付ける際、はんだづけが必要<span class="footnote">はんだづけが不要なものもありますが、基盤が対応している必要があります。今回は非対応です。</span>なため購入しました。
+セラミックヒーターで、かつ温度調整が可能なものが望ましいです。こて台が付属していない場合は、安全のため購入しておくことをお勧めします。</p>
+<p>はんだは、プリント基板用の直径 0.8mm のものを購入しました。あとは、失敗したとき用に吸い取り線があると安心です。</p>
+<p><img src="handagote.JPG" alt="はんだごて" />{width=300}</p>
+<h3 id="その他工具"><a class="header" href="#その他工具">その他工具</a></h3>
+<p>潤滑剤とカッターマットを購入。潤滑剤は筆で塗るタイプが好ましいです。また、ドライバーが基板のねじ止めの際に必要です。ドライバーは家にあったのでそれを使用しました。</p>
+<h2 id="組み立て"><a class="header" href="#組み立て">組み立て</a></h2>
+<p>さて、いよいよ組み立てに入ってきます。まず最初に、基板にいろいろ取り付けていきます。</p>
+<h3 id="スタビライザーに潤滑剤を塗る"><a class="header" href="#スタビライザーに潤滑剤を塗る">スタビライザーに潤滑剤を塗る</a></h3>
+<p>前述の通り、タイピング時に金属音が鳴るのを軽減するため、一度スタビライザーを分解してから、金属部分に潤滑剤を塗っていきます。本当はキースイッチも分解して潤滑剤を塗るといいそうですが、キースイッチを分解する道具を買っていなかったので今回は塗っていません。<del>一度潤滑剤を倒してしまいあわや大惨事になりかけたのは内緒</del></p>
+<p><img src="stabi_taken_apart.JPG" alt="スタビライザーの分解" />{width=300}</p>
+<h3 id="スタビライザーを基板に取り付ける"><a class="header" href="#スタビライザーを基板に取り付ける">スタビライザーを基板に取り付ける</a></h3>
+<p>スタビライザーのプラスチック部分の爪を、基板の小さな穴に押し込みます<span class="footnote">ねじ止めタイプの場合はねじ止めします。今回は爪タイプです。</span>。取り付ける位置は基板の取扱説明書などに書いてあるのでそれを参考にします。意外と力がいるので、基盤を折りそうになりますが、折らない程度に思い切りよく押し込むと上手くいきます。スタビライザーは、取り付け位置によって上下の向きが異なるので注意します。</p>
+<p><img src="pcb%2Bstabi.JPG" alt="スタビライザー取り付け" />{width=300}</p>
+<h3 id="プレートとキースイッチを基板に取り付ける"><a class="header" href="#プレートとキースイッチを基板に取り付ける">プレートとキースイッチを基板に取り付ける</a></h3>
+<p>上下の向きに気を付けつつプレートを基板に取り付け、キースイッチを取り付けていきます。キースイッチの裏側にある 5 本の爪と基板の穴の位置が合うように、また取り付け位置は基板の取扱説明書やプレートの穴を参考にします。</p>
+<p><img src="p%2Bs%2Bplate.JPG" alt="プレート取り付け" />{width=300}</p>
+<p><img src="p%2Bs%2Bp%2Bswitch.JPG" alt="スイッチ取り付け" />{width=300}</p>
+<h3 id="キーキャップを仮で取り付ける"><a class="header" href="#キーキャップを仮で取り付ける">キーキャップを仮で取り付ける</a></h3>
+<p>特に横に長いキーは、スタビライザーやキースイッチの位置を間違えると隣のキーと干渉してキーキャップがはまらない可能性があるため、一部を仮で取り付けてみて干渉しないか確認します。大丈夫そうなら、外して次の工程に移ります。</p>
+<p><img src="temp_cap.JPG" alt="キャップ仮設置" />{width=300}</p>
+<h3 id="キースイッチをはんだ付けする"><a class="header" href="#キースイッチをはんだ付けする">キースイッチをはんだ付けする</a></h3>
+<p>基板の裏から出ている、各スイッチの 2 本の金属の爪にはんだ付けをしていきます。はんだ付けをしたのは前期生の技術の授業でやったとき以来なので、コツを掴むのに苦労しました。<del>というかコツ掴んでない</del></p>
+<p>こて先が熱すぎるとはんだが蒸発？したので、適宜こて台のスポンジで冷やすようにするといい感じになります。</p>
+<p><img src="handaduke.JPG" alt="はんだ付け" />{width=300}</p>
+<h3 id="ケースにネジ止めしてキーキャップを取り付ける"><a class="header" href="#ケースにネジ止めしてキーキャップを取り付ける">ケースにネジ止めして、キーキャップを取り付ける</a></h3>
+<p>基盤を付属のねじを使ってケースにねじ止めして、各スイッチにキーキャップを取り付けていきます。キーキャップの穴の部分を、キースイッチの先端の突起に押し込んではめます。日本語配列とは配列が異なるので、「US キーボード 60%」等でググって配列を確認しながらはめていきます。スタビライザーとキースイッチの両方が下に来るスペースキー、Enter キーなどは、キースイッチとスタビライザー両方の突起がキーキャップの穴に取り付けられるようにします。</p>
+<p><img src="complete.JPG" alt="キャップ取り付け" />{width=300}</p>
+<h3 id="pc-につないで動作確認をする"><a class="header" href="#pc-につないで動作確認をする">PC につないで動作確認をする</a></h3>
+<p>今回は、キーボード側の端子が Type-C なので、それに対応したコードを使います。家に数本余っていたのでそれを使います。100 均のを使うと接続が安定しなかったので、ちゃんとしたものを使っています。基板の LED が光って、PC 側で入力がしっかりできていればとりあえずは OK です。光っている様子は後ほど。</p>
+<p>入力ができているかの確認は、ネットでもできるし、専用のソフトもあるのでそれを使うといいでしょう。今回は<strong>VIA</strong>と呼ばれるソフトを使いました。画面上のタブから<strong>KEY TESTER</strong>を選択し、任意のキーを押すと、認識されればそれに対応するキーが赤色に変わります。今回は、右シフトキーなどが矢印キーとして認識されていたため、それの修正をしていきます。</p>
+<p><img src="keytest.png" alt="キーテスト" />{width=300}</p>
+<h3 id="キーマップを変更する１"><a class="header" href="#キーマップを変更する１">キーマップを変更する１</a></h3>
+<p>内部的に認識されているキーの配置（キーマップ）を変更し、実際の配置との齟齬をなくしていきます。先ほど使用した VIA で修正することができます。画面上のタブから<strong>CONFIGURE</strong>を選択します。画面上半分にあるキーボードのイラストから、変更したいキーを選択し、画面下半分のキー一覧から、そのキーに新たに対応させたいキーを選択すると、キーマップを書き換えることができます。</p>
+<p><img src="keymap1.png" alt="キーマップ変更" />{width=300}</p>
+<h3 id="キーマップを変更する２"><a class="header" href="#キーマップを変更する２">キーマップを変更する２</a></h3>
+<p>60%キーボードには、ファンクションキー（F1、F2...）や矢印キー等が存在しないため、このままではただの使いにくいキーボードになってしまいます。そこで、キーマップにレイヤーを追加して、これらのキーを使えるようにします。この作業が、自作キーボードの一番のミソだと思います。</p>
+<h4 id="レイヤーを編集する"><a class="header" href="#レイヤーを編集する">レイヤーを編集する</a></h4>
+<p>画面左上の<strong>LAYER</strong>の数字を選択することでそのレイヤーの編集画面に移ることができます。先ほどの修正過程で書き換えたのはレイヤー 0 ですので、レイヤー 1 を選択します。すると、 画面上半分のキーボードのイラストが、何も書いていないまっさらな状態になります（画像はレイヤー 2）。これに、先ほどの修正過程と同じ手順でキーを割り当てていきます。今回割り当てたのは、左側の主要なキーと、矢印キー、記号キー、Print Screen キー、Delete キー等です。</p>
+<h4 id="レイヤーを移動するキーを設定する"><a class="header" href="#レイヤーを移動するキーを設定する">レイヤーを移動するキーを設定する</a></h4>
+<p>このままでは一つのレイヤーしか使えないので、複数のレイヤーを移動できるようにキーを設定していきます。使用するのは<strong>MO()キー</strong>と<strong>TO()キー</strong>です。()の中身がレイヤーの番号と同じものを使います。MO(n)キーはそのキーを押している間 n 番目のレイヤーに移動し、TO(n)キーは一度押すとずっと n 番目のレイヤーに移動したままになります。レイヤー 0 の右の MENU キーと FN キーは特に使わないのでこれに割り当てます。レイヤー 0 からレイヤー 1 に移動させたいのでどちらも()の中身が 1 であるものを使います。また、TO(1)を使用したときにレイヤー 0 に戻れるようにしたいので、レイヤー 1 に TO(0)を割り当てておきます。これでレイヤーを活用して、存在しないキーを使えるようにすることができました。</p>
+<div style="display: flex; column-gap: 10px;">
+<p><img src="empty_layer.png" alt="まっさらなレイヤー" /></p>
+<p><img src="written_layer.png" alt="レイヤー設定" /></p>
+</div>
+<h2 id="完成"><a class="header" href="#完成">完成！</a></h2>
+<p>これにて初の自作キーボード、完成となります。ちなみに、光り具合も VIA で調整することができます。</p>
+<p>初めてのハードウェア自作でしたが、ほぼ何事もなく無事完成させることができてとても嬉しく思います。この記事も今回製作したキーボードで書きましたが、打鍵感も打音も最高で、大満足です。<del>財布の中身は空っぽになりましたが。</del> そしてなにより、ずっと挑戦してみたかった自作が実現したのが本当に夢のようで、とても楽しかったです。次はお金をためて PC 自作にも挑戦してみようかな。</p>
+<p>キーボードの自作は、突き詰めれば何も技術はいらず、お金さえあれば誰でも気軽に作れると思うので、皆さんもぜひ挑戦してみてください。</p>
+<p><img src="complete1.JPG" alt="完成" />{width=300}</p>
+<p><img src="complete2.JPG" alt="完成2" />{width=300}</p>
+<h2 id="余談"><a class="header" href="#余談">余談</a></h2>
+<p>キーマップの書き換えについてですが、当初はキーマップをウェブサイトで作成し、それをファームウェアと呼ばれる、ハードウェアの処理をつかさどる部分に書き込む方法で行っていました。その書き込みでやらかしてしまい、キーは効かず基板も光らずで、ただのクソデカ文鎮と化してしまいました。何時間も格闘したのに直らずへこんでいたところ、その状態から、我らが PC 部部長<strong>Ryoga.exe</strong>がほんの数十分で直してくださいました。部長には感謝してもしきれないので、この場を借りてお礼させていただきます。ありがとうございました。ちなみに原因は単に書き込みがうまくいっていなかっただけでした。<del>クソが</del></p>
+<h2 id="余談２"><a class="header" href="#余談２">余談２</a></h2>
+<p>パーツを店舗で購入した際、レシートの代わりに領収書を受け取ったので、キースイッチがなんのものなのかわからなくなってしまいました。小一時間インターネットを探し回っても見つからなかったので、自作キーボード界隈では有名な YouTuber の<strong>ららぽん</strong><span class="footnote">https://twitter.com/rarapon_exe</span>さんという方の Twitter の DM に突撃したところ、何と一瞬で見つかりました。この記事を書ききれたのもららぽんさんのおかげなので、この場を借りてお礼させていただきます。ありがとうございました。</p>
+<h2 id="special-thanks"><a class="header" href="#special-thanks">Special Thanks</a></h2>
+<ul>
+<li>遊舎工房</li>
+<li>ジョイフル本田</li>
+<li>rarapon/ららぽん</li>
+<li>Ryoga.exe</li>
+<li>この記事を読んでくださった方々</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../../../../magazine/2022/contents/fe-ap/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../../../../magazine/2022/contents/eno1220/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../../../../magazine/2022/contents/fe-ap/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../../../../magazine/2022/contents/eno1220/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

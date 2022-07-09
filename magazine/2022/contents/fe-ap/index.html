@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>基本/応用技術者試験体験記 - KSS-PC-Club docs</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="KSS PC Club の部活内ドキュメント">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../../../../favicon.svg">
+                        <link rel="shortcut icon" href="../../../../favicon.png">
+                <link rel="stylesheet" href="../../../../css/variables.css">
+        <link rel="stylesheet" href="../../../../css/general.css">
+        <link rel="stylesheet" href="../../../../css/chrome.css">
+                <link rel="stylesheet" href="../../../../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../../../../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../../highlight.css">
+        <link rel="stylesheet" href="../../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../../about.html">はじめに</a></li><li class="chapter-item expanded affix "><a href="../../../../club-introduction.html">部活動紹介</a></li><li class="chapter-item expanded affix "><a href="../../../../usage.html">使い方</a></li><li class="chapter-item expanded affix "><a href="../../../../link.html">リンク</a></li><li class="chapter-item expanded "><a href="../../../../self-introduction/index.html"><strong aria-hidden="true">1.</strong> 自己紹介</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../self-introduction/6th/eno1220/index.html"><strong aria-hidden="true">1.1.</strong> eno1220</a></li></ol></li><li class="chapter-item expanded "><a href="../../../../magazine/index.html"><strong aria-hidden="true">2.</strong> 部誌</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../magazine/2022/index.html"><strong aria-hidden="true">2.1.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/foreword.html"><strong aria-hidden="true">2.1.1.</strong> はじめに</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/about-vivliostyle/index.html"><strong aria-hidden="true">2.1.2.</strong> この部誌を支える技術</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/icpc-invitation/index.html"><strong aria-hidden="true">2.1.3.</strong> ICPC へのお誘い</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/hnm2022/index.html"><strong aria-hidden="true">2.1.4.</strong> ワンクリック詐欺サイト解剖してみた</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/newtons-method/index.html"><strong aria-hidden="true">2.1.5.</strong> ニュートン法で近似をしよう</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/fe-ap/index.html" class="active"><strong aria-hidden="true">2.1.6.</strong> 基本/応用技術者試験体験記</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/keyboard/index.html"><strong aria-hidden="true">2.1.7.</strong> キーボードが欲しかったので自作してみた</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/eno1220/index.html"><strong aria-hidden="true">2.1.8.</strong> プログラミング言語 Zig の基本文法</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/an_introduction_to_archlinux/index.html"><strong aria-hidden="true">2.1.9.</strong> 始めよう、ArchLinux</a></li></ol></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">KSS-PC-Club docs</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        <a href="https://github.com/kss-pc-club/doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                                        <a href="https://github.com/kss-pc-club/doc/src/magazine/2022/contents/fe-ap/index.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="基本応用情報技術者試験合格体験記"><a class="header" href="#基本応用情報技術者試験合格体験記">基本/応用情報技術者試験合格体験記</a></h1>
+<p><span class="author">Ryoga.exe &amp; Anthony</span>
+<br /></p>
+<p>こんにちは。令和 3 年度秋期応用情報技術者試験に合格した第 5 期生の Ryoga.exe と同じく 5 期生の令和 3 年度下期基本情報技術者試験に合格した Anthony です。今回はこの試験に向けた勉強方法や試験会場の様子などについてお伝えしたいと思います。</p>
+<h2 id="基本応用情報技術者試験とは"><a class="header" href="#基本応用情報技術者試験とは">基本/応用情報技術者試験とは？</a></h2>
+<p>基本情報技術者試験とは、「高度 IT 人材となるために必要な基本的知識・技能をもち、実践的な活用能力を身に付けた者」であるのを証明する試験です。</p>
+<p>そして、応用情報技術者試験とは、「高度 IT 人材となるために必要な<strong>応用的</strong>知識・技能をもち、高度 IT 人材としての方向性を確立した者」を対象とした試験とされています。<span class="footnote">試験要綱 https://www.jitec.ipa.go.jp/1_13download/youkou_ver4_8.pdf</span>
+つまり、基本情報技術者試験からワンランク上の IT エンジニアという立ち位置で、知識や基礎的な力を応用できる人材という感覚です。<span class="footnote">上位レベル（スキルレベル 3）に位置しており、偏差値 65 と難関資格に分類されているようです。</span></p>
+<h2 id="基本情報技術者試験について"><a class="header" href="#基本情報技術者試験について">基本情報技術者試験について</a></h2>
+<p>それでは、基本情報技術者試験（以降 FE と表記します）についていろいろと書いていこうと思います。</p>
+<h3 id="午前試験の勉強について"><a class="header" href="#午前試験の勉強について">午前試験の勉強について</a></h3>
+<p>午前試験は、情報に関する幅広い知識が問われます。とにかくこの範囲という範囲が広く、計算の知識、パソコンを構成する部品の名前やその性質、論理回路、セキュリティーなどなど様々なコンピューターの知識がでます。</p>
+<p>しかし、範囲はこれだけにはとどまらず、システムの開発やそのシステムの運用方法といったマネジメントやストラテジーという分野があります。 この分野では、企業が守るべきことは何か？企業でどのように戦略を立てて、どのようにお金の処理をしているかなどについて学んでいきます。</p>
+<p>そのため、独学でさらに学生のうちにこの資格を取ろうと思うと、相当な量の知識を得なくてはいけません。</p>
+<p>そこで、私は参考書として『キタミ式基本情報技術者 著:きたみりゅうじ』<span class="footnote">https://www.amazon.co.jp/dp/B09MYGL7B5</span>を、過去問を解くのに『基本情報技術者試験過去問道場』<span class="footnote">https://www.fe-siken.com</span>を使いながら１か月勉強しました。（実際は間に定期テストが入っていたためスケジュールがきつかったです。）</p>
+<h3 id="午後試験の勉強について"><a class="header" href="#午後試験の勉強について">午後試験の勉強について</a></h3>
+<p>午後試験は、プログラミングです。必答問題と選択問題があり、ほぼすべての問題が空所補充となっています。これらは、問題慣れが必要だったのでこれも過去問道場で演習しました。</p>
+<p>そして、試験本番についてです。FE は CBT 形式のテストで、指定された会場のパソコンを操作して解答する形となっています。会場に指定された時間までに行って、受付を済ませ、PC が使用可能になるまで待ちます。席についたら、画面の指示に従って操作します。（画面上に制限時間が出てきます。）
+FE は全て択一式の問題となっているので、選択肢をクリックしていくだけで出来ます。</p>
+<h3 id="受験した感想"><a class="header" href="#受験した感想">受験した感想</a></h3>
+<p>最後に自分の感想です。FE を受けるにあたって、色々なことを勉強して今までなんとなく知っていただけのことが、細かいところまで分かって楽しかったです。また、午前試験は知識だけしか出ないのに対し、午後試験は応用力が求められ情報的な論理的思考力を磨く機会になってよかったです。</p>
+<p>ここで一つ、試験を受けたいなと思ったときは、なるべく早めに申し込むようにしましょう。CBT のテストでは、専用の機械がおいてある必要があるので場所が限られています。そのため、会場に申し込もうとしても空席が無かったり、あったとしても遠すぎる場所になってしまいます。（ちなみに自分は FE のために福島にいきました。）</p>
+<p>また、現在 FE は以前のように決められた日のみでしか、受けられないのではなく期間内ならいつでも受けられるようになりました。<span class="footnote">また、出題範囲や形式が大きく変わりました。</span>皆さんも勉強して FE を取ってみましょう。</p>
+<h2 id="応用技術者試験について"><a class="header" href="#応用技術者試験について">応用技術者試験について</a></h2>
+<p>次に応用情報技術者試験（以降 AP と表記します）についていろいろと書いていきます。
+書き手が変わって Ryoga.exe です。</p>
+<p>午前試験の大まかな出題範囲は FE と変わらず、ネットワークやセキュリティ、データベースなどのテクノロジ系に加え、プロジェクトマネジメントやシステム監査などのマネジメント系、そして経営戦略やマーケティングなどのストラテジ系が含まれています。FE と比べて複雑な計算問題や細かい知識まで問われます。</p>
+<p>しかし、午後試験では記述式の設問が加わり、FE に比べ多くの論理的思考力や知識の応用力などが問われます。
+ここで、AP では選択問題があるため<strong>全ての分野を解く必要はない</strong>です。</p>
+<p>具体的には以下の 10 の分野から 4 分野を選択します。<strong>情報セキュリティについては必答問題です。</strong></p>
+<ul>
+<li>経営戦略／戦略立案・コンサルティング技法／情報戦略</li>
+<li>プログラミング</li>
+<li>システムアーキテクチャ</li>
+<li>ネットワーク</li>
+<li>データベース</li>
+<li>組込みシステム開発</li>
+<li>情報システム開発</li>
+<li>プロジェクトマネジメント</li>
+<li>サービスマネジメント／IT サービスマネジメント</li>
+<li>システム監査</li>
+</ul>
+<h3 id="午前試験の対策"><a class="header" href="#午前試験の対策">午前試験の対策</a></h3>
+<p>参考書として『キタミ式応用情報技術者 著:きたみりゅうじ』<span class="footnote">https://amazon.co.jp/dp/B09MYHHJ9P</span>を使いました。また、『応用情報技術者試験過去問道場』<span class="footnote">https://www.ap-siken.com</span>を使い、たくさんの過去問を解きました。</p>
+<p>私が行った勉強法は参考書で一つの分野を一通り終わらせ、過去問道場で全ての過去問題を解くという感じでした。しかし、集中力がほとんどなかった私にとって長く続きませんでした。</p>
+<p>調べてみると、Pomodoro 法<span class="footnote">https://ja.wikipedia.org/wiki/ポモドーロ・テクニック</span>という勉強方法があるらしく、これを実践して勉強に励んでいました。これがかなり良かったです。また、単語が膨大で覚えるのが大変だったので Anki というアプリを活用して効率的に暗記をしました。このアプリは能動的に思い出すテスト、間隔をあけた復習、忘却曲線に基づいて出題頻度を管理することができるので、確実に覚えることができました。</p>
+<p>幸いにも試験前の一か月には学校が休校となり、オンライン授業に切り替わったので大幅に勉強時間を確保することができました。</p>
+<p>しかしながら、ストラテジ系は時間が足らずあまり勉強ができませんでした。また、単純に苦手だったのでここの得点率がそこまで伸びませんでした。（得意の分野であるテクノロジ系の出題割合が大きかったので助かりました...）</p>
+<p>計算問題については工夫をし、ミスを減らせるように努力しました。特に単位のミスがもったいないので計算の途中式には単位を付けることを徹底しました。これをすることで Byte 単位で答えるところを Bit 単位で答えてしまうなどのミスが防げます。</p>
+<h3 id="午後試験の対策"><a class="header" href="#午後試験の対策">午後試験の対策</a></h3>
+<p>参考書として『応用情報技術者 午後問題の重点対策 著:小口達夫』<span class="footnote">https://amazon.co.jp/dp/4865752218</span>を使いました。巷では緑本と呼ばれている本です。</p>
+<p>午後問題では非常に長文読解力や図表の読み取りが必要となるので大変でした。現代文や英語の長文を解くときのように文章に下線を引いたり、重要な単語をマークするなどして解きました。</p>
+<p>また、記述形式の設問については基本的に使うべきキーワードを正しく使って解答できているかという点が重要です。そのため、過去問の解答例を見ても、例えば字数制限 40 字に対して解答例が 30 字などということがあります。国語の試験でよくある「字数制限ギリギリまで書く」などといったことはありません。</p>
+<p>私は、<strong>プログラミング</strong>、<strong>システムアーキテクチャ</strong>、<strong>組込みシステム開発</strong>、<strong>システム監査</strong>の分野を選択しました。そのため、この分野と必答問題である<strong>セキュリティ</strong>を中心に書いていきます。</p>
+<p>必答問題のセキュリティの分野では、ネットワークの知識やデータベース、暗号化などの複合的な分野の知識が要求されます。また、図表を読み取るのに慣れていないと苦戦すると思うので何度も過去問を解くことをおすすめします。</p>
+<p>競技プログラミングをしていたため、プログラミングの分野はサクサクと解けました。
+アルゴリズムの実装についての問題などが出題されますが、擬似言語を用いるので慣れていないと苦戦するかもしれません。様々な言語に触れていると楽だと思います。</p>
+<p>システムアーキテクチャについては過去問を一度解くとかなりできるようになる分野だと思います。複雑な計算問題も出題されるのでミスをしないように注意して解きました。</p>
+<p>組込みシステム開発では整理しながら解かないとかなり難しいです。この分野は言葉で説明しにくいので是非過去問を解いてみてください！</p>
+<p>最後にシステム監査ですが、完全に国語の問題でした。正しく読解して自分の常識に従えば正答できます。実際、私はこの分野の過去問を一切解きませんでしたが、自信を持って解答することができました。
+勉強時間が取れなさそうな方はこの分野、おすすめです。</p>
+<h3 id="受験会場の様子"><a class="header" href="#受験会場の様子">受験会場の様子</a></h3>
+<p>午前の試験時間は体感ではかなり長めでした。そのため余裕をもって解答することができました。</p>
+<p>また、試験中は退出可能時間が指定されています。その間に試験を終えて昼休みに入ることができます。
+実際に一部の受験者は途中退出をしていました。しかしながら、私は見直しによって数問ミスに気づけたので何度も見直しをするのが無難だと思います。</p>
+<p>午後試験前にお昼ご飯を食べられます。この際に携帯電話の電源を付けることができるので過去問を解いたりなどできます。</p>
+<p>午後試験に関しては記述と読解に時間が非常に取られるので午前に比べ、試験時間が若干ギリギリでした。
+午後にも退出可能時間が指定されていますが、午前に比べ途中退出をしていた受験者は少なかったです。</p>
+<p>さらに細かい様子は私の月記の 10/10 のところからどうぞ。<span class="footnote">https://month-diary.ryoga.dev/2021/11/20219.html</span></p>
+<h2 id="まとめ"><a class="header" href="#まとめ">まとめ</a></h2>
+<p>実務経験のない私たちでも 1 か月程みっちりと対策すれば受かる程度の難易度でしたのでぜひ皆さんも挑戦してみてはいかがでしょうか。</p>
+<h3 id="余談在校生の方々へ"><a class="header" href="#余談在校生の方々へ">余談（在校生の方々へ）</a></h3>
+<p>特別棟 2 階奥のパソコン室の後ろにある棚に基本情報技術者試験と応用情報技術者試験の対策本が何冊が置いてありますので是非手に取って挑戦してみてください！！！（さらにこれに加え、IT パスポートの対策本も置いてあります。）</p>
+<p>パソコン部に入部している方は部長に尋ねてくれれば貸し出しも行っているのでぜひ。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../../../../magazine/2022/contents/newtons-method/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../../../../magazine/2022/contents/keyboard/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../../../../magazine/2022/contents/newtons-method/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../../../../magazine/2022/contents/keyboard/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

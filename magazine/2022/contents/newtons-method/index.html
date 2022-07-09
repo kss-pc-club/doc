@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<html lang="ja" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ニュートン法で近似をしよう - KSS-PC-Club docs</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="KSS PC Club の部活内ドキュメント">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../../../../favicon.svg">
+                        <link rel="shortcut icon" href="../../../../favicon.png">
+                <link rel="stylesheet" href="../../../../css/variables.css">
+        <link rel="stylesheet" href="../../../../css/general.css">
+        <link rel="stylesheet" href="../../../../css/chrome.css">
+                <link rel="stylesheet" href="../../../../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../../../../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../../highlight.css">
+        <link rel="stylesheet" href="../../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../../about.html">はじめに</a></li><li class="chapter-item expanded affix "><a href="../../../../club-introduction.html">部活動紹介</a></li><li class="chapter-item expanded affix "><a href="../../../../usage.html">使い方</a></li><li class="chapter-item expanded affix "><a href="../../../../link.html">リンク</a></li><li class="chapter-item expanded "><a href="../../../../self-introduction/index.html"><strong aria-hidden="true">1.</strong> 自己紹介</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../self-introduction/6th/eno1220/index.html"><strong aria-hidden="true">1.1.</strong> eno1220</a></li></ol></li><li class="chapter-item expanded "><a href="../../../../magazine/index.html"><strong aria-hidden="true">2.</strong> 部誌</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../magazine/2022/index.html"><strong aria-hidden="true">2.1.</strong> 2022</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/foreword.html"><strong aria-hidden="true">2.1.1.</strong> はじめに</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/about-vivliostyle/index.html"><strong aria-hidden="true">2.1.2.</strong> この部誌を支える技術</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/icpc-invitation/index.html"><strong aria-hidden="true">2.1.3.</strong> ICPC へのお誘い</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/hnm2022/index.html"><strong aria-hidden="true">2.1.4.</strong> ワンクリック詐欺サイト解剖してみた</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/newtons-method/index.html" class="active"><strong aria-hidden="true">2.1.5.</strong> ニュートン法で近似をしよう</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/fe-ap/index.html"><strong aria-hidden="true">2.1.6.</strong> 基本/応用技術者試験体験記</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/keyboard/index.html"><strong aria-hidden="true">2.1.7.</strong> キーボードが欲しかったので自作してみた</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/eno1220/index.html"><strong aria-hidden="true">2.1.8.</strong> プログラミング言語 Zig の基本文法</a></li><li class="chapter-item expanded "><a href="../../../../magazine/2022/contents/an_introduction_to_archlinux/index.html"><strong aria-hidden="true">2.1.9.</strong> 始めよう、ArchLinux</a></li></ol></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">KSS-PC-Club docs</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        <a href="https://github.com/kss-pc-club/doc" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                                        <a href="https://github.com/kss-pc-club/doc/src/magazine/2022/contents/newtons-method/index.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ニュートン法で近似をしよう"><a class="header" href="#ニュートン法で近似をしよう">ニュートン法で近似をしよう</a></h1>
+<h2 id="はじめに"><a class="header" href="#はじめに">はじめに</a></h2>
+<p>世の中には、特別な記号を使わずして表すことのできない、多くの数が存在しています。
+具体的に言うと、$\sqrt{2}$、$\log{2}$、$\pi$(円周率)、$e$(ネイピア数)などの無理数と呼ばれる数がそれにあたります。</p>
+<p>そして、我々人間はその値がどの程度であるか確かめるために様々な方法でその値を近似してきました。具体的には、円周率を正多角形を用いて求めてみたり、不等式で値を概算してみたり、級数を用いたりなどです。</p>
+<p>今回はそんな人間が生み出してきた近似方法の一つである、ニュートン法について焦点を当てて考えていこうと思います。</p>
+<h2 id="ニュートン法とは"><a class="header" href="#ニュートン法とは">ニュートン法とは</a></h2>
+<p>まず、ニュートン法の説明をします。ニュートン法とは、簡単に言うと接線を引きその交点を求めることによって、求めたい値を近似していく方法です。この時、接線の傾きを求める関係上、$f(x)$ は微分可能な関数でなくてはいけません。</p>
+<p>厳密に言うと $f(x) = 0$ の解 (求めたい数) を接線を用いることによって近似します。ここで、$f(x)$ の接線を求めるために、求めたい数より大きな $x$ 座標全てで微分可能であることを前提とします。
+最初の $x$ 座標を $x_1$ とし、最初の $y$ 座標を $f(x_1)$ とします。</p>
+<br />
+<hr />
+<p>一回目の操作の時、接線の傾きは $f'(x_1)$ で、これは点 $(x_1,f(x_1))$ を通るから接線の方程式は</p>
+<p>$$
+y = f'(x_1)(x - x_1) + f(x_1)
+$$</p>
+<p>となる。</p>
+<p><img src="./fig1.png" alt="接線を引いた様子" />{width=300}</p>
+<p>これを繰り返すことにより、$n$ 回目の接線の傾きは $f'(x_n)$、接点は点 $(x_n,f(x_n))$ であるから
+$n$ 回目の接線の方程式は</p>
+<p>$$
+y = f'(x_n) ( x - x_n ) + f(x_n)
+$$</p>
+<p>となる。</p>
+<p>この時、$y = 0$ の時の $x$ 座標が $x_{n+1}$ となるので、$y = 0, x = x_{n+1}$ として移項すると</p>
+<p>$$
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+$$</p>
+<p>という式が得られる。</p>
+<hr />
+<br />
+<p>この式の $n$ を限りなく大きくすることによって得られる $x$ が答えとなります。</p>
+<p><img src="./fig2.png" alt="x₁ = 4としたときの x₄ まで求めた様子" />{width=300}</p>
+<p>図からなんとなく収束していきそうな感じがしますが、証明によりきちんと値が収束することを示します。</p>
+<p>証明を以下の 3 ステップで行います。</p>
+<br />
+<ol>
+<li>$\sqrt{a} &lt; x_{n+1} &lt; x_n$ を示す
+<blockquote>
+<p>$x_1 &gt; \sqrt{a} &gt; 0$（前提より）</p>
+<p>数学的帰納法により $x_n &gt; \sqrt{a}$を示す</p>
+<p>(1) $n = 1$のとき $x_1 &gt; \sqrt{a}$</p>
+<p>(2) $n = k$のとき成り立つとすると $x_k &gt; \sqrt{a}$</p>
+<p>$n = k+1$ のとき</p>
+<p>$$
+x_{k+1} = \frac{x_k^2 + a}{2x_k} &gt; \frac{(a+a)}{2\sqrt{a}} = \sqrt{a} &gt; 0
+$$</p>
+<p>よって $n = k$ が成り立つとき、$n = k+1$ も成り立つ</p>
+<p>(1)(2) より全ての自然数 k において $x_n &gt; \sqrt{a}$ が成り立つ</p>
+<p>ここで</p>
+<p>$$
+x_n - x_{n+1} = x_n - (\frac{x_n}{2} + \frac{a}{2x_n}) = \frac{x_n^2 - a}{2x_n}
+$$</p>
+<p>$x_n &gt; \sqrt{a}$ より、$x_n^2 - a &gt; 0$</p>
+<p>故に</p>
+<p>$$
+\frac{x_n^2 - a}{2x_n} &gt; 0
+$$</p>
+<p>したがって $x_{n+1} &lt; x_n$</p>
+<p>よって</p>
+<p>$$
+\sqrt{a} &lt; x_{n+1} &lt; x_n
+$$</p>
+</blockquote>
+</li>
+<li>$x_{n+1}-\sqrt{a} &lt; \frac{1}{2}(x_n-\sqrt{a})$ を示す
+<blockquote>
+<p>$$
+\begin{eqnarray}
+\frac{1}{2}(x_n-\sqrt{a}) - x_{n+1} + \sqrt{a} &amp;=&amp; \frac{\sqrt{a}}{2} - \frac{a}{2x_n}\
+&amp;=&amp; \frac{\sqrt{a}}{2x_n}(x_n-\sqrt{a})
+\end{eqnarray}
+$$</p>
+<p>$x_n &gt; \sqrt{a}$ より $\frac{\sqrt{a}}{2x_n}(x_n-\sqrt{a}) &gt; 0$</p>
+<p>したがって</p>
+<p>$$
+x_{n+1}-\sqrt{a} &lt;\frac{1}{2}(x_n-a)
+$$</p>
+</blockquote>
+</li>
+<li>極限値が $\sqrt{a}$ に収束することを示す
+<blockquote>
+<p>2.で求めた不等式を繰り返すことにより</p>
+<p>$$
+\begin{eqnarray}
+x_n-\sqrt{a} &amp;&lt;&amp; \frac{1}{2}(x_{n-1}-\sqrt{a})\
+&amp;&lt;&amp; (\frac{1}{2})^2(x_{n-2}-\sqrt{a})\
+&amp;&lt;&amp; \cdots &lt; (\frac{1}{2})^{n-1}(x_1-\sqrt{a})
+\end{eqnarray}
+$$</p>
+<p>$x_1 &gt; \sqrt{a}$ より</p>
+<p>$$
+0 &lt; x_n- \sqrt{a} &lt; (\frac{1}{2})^{n-1}(x_1-\sqrt{a})
+$$</p>
+<p>ここで</p>
+<p>$$
+\lim_{n \to \infty} (\frac{1}{2})^{n-1}(x_1-\sqrt{a}) = 0
+$$</p>
+<p>はさみうちの原理により</p>
+<p>$$
+\lim_{n \to \infty} (x_n - \sqrt{a}) = 0
+$$</p>
+<p>したがって</p>
+<p>$$
+\lim_{n \to \infty}x_n = \sqrt{a} \quad \blacksquare
+$$</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="プログラミングしてみよう"><a class="header" href="#プログラミングしてみよう">プログラミングしてみよう！！</a></h2>
+<p>では、先ほどこの方法が成り立つことが確認できたのでプログラムによって再現していきましょう。今回は $\sqrt{2}$ の場合について作っていくことにします。</p>
+<p>以下のプログラムは、すべて<code>C++</code>で記述されています。</p>
+<p>さっそくですが、下のようなコードになります。</p>
+<pre><code class="language-cpp">// コード(cpp)
+#include &lt;bits/stdc++.h&gt; // おまじない
+using namespace std;
+
+// プログラムのはじまり
+int main() {
+  double ans = 20;
+
+  // 十分な回数(10000回)繰り返す
+  for (int i = 0;i &lt; 10000; i++) {
+    // ニュートン法の式の通りに値を更新
+    ans = ans -((ans*ans)-2)/(2*ans);
+
+  }
+  // 小数第15位までansの数字を表示する
+  printf(&quot;%.15f\n&quot;,ans);
+
+} // プログラムの終わり
+</code></pre>
+<p>これだけを見てもよく分からないと思うので補足をしてきます。</p>
+<h3 id="①-プログラムの基本構造c"><a class="header" href="#①-プログラムの基本構造c">① プログラムの基本構造(C++)</a></h3>
+<p>プログラミング言語には日本語や英語と同じように文法が存在しており、一定の規則の上で書かなくてはいけません。下の部分はプログラムの開始、終了をコンピューターに伝える部分となっています。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+
+}
+</code></pre>
+<h3 id="②-変数の宣言"><a class="header" href="#②-変数の宣言">② 変数の宣言</a></h3>
+<p>今回扱う数字は実数なので、実数の変数を定義し、初期値(= x1)としておきます。</p>
+<pre><code class="language-cpp">double ans = 20;
+</code></pre>
+<p>これは $x_1＝20$ としています。また、この初期値は求めたい数より大きければどの数でもかまいません。（自然数に限らず、実数でも OK です。）</p>
+<h3 id="③-繰り返し"><a class="header" href="#③-繰り返し">③ 繰り返し</a></h3>
+<p><code>{}</code>で囲まれている部分を 10000 回繰り返します。</p>
+<pre><code class="language-cpp">for (int i = 0;i &lt; 10000; i++) {
+
+}
+</code></pre>
+<p>ちなみに下の場合は 10 回の繰り返しとなります。</p>
+<pre><code class="language-cpp">for (int i = 0;i &lt; 10; i++) {
+
+}
+</code></pre>
+<h3 id="④-ニュートン法の計算部分"><a class="header" href="#④-ニュートン法の計算部分">④ ニュートン法の計算部分</a></h3>
+<p>初めに、ほとんどのプログラミング言語における「=」は等式を意味しているものではなく、代入を意味します。例えば <code>a = 20</code> を例にとって考えてみます。数学では <code>a</code> と<code>20</code>は同じ値であるということを意味していますが、プログラミング言語では「変数<code>a</code>に<code>20</code>を<strong>代入する</strong>」ということを意味します。
+また、掛け算の記号は <code>×</code> でなく <code>*</code> を、割り算の記号は <code>÷</code> でなく <code>/</code> を用います。</p>
+<p>このプログラムでは、<code>ans</code>の値を更新していき、値を求めます。</p>
+<h3 id="⑤-表示"><a class="header" href="#⑤-表示">⑤ 表示</a></h3>
+<p>10000 回計算が終わった後、ans の値を小数第 15 位まで表示して改行します。</p>
+<pre><code class="language-cpp">printf(&quot;%.15f\n&quot;,ans);
+</code></pre>
+<h2 id="結果"><a class="header" href="#結果">結果</a></h2>
+<p>前節で書いたプログラムの初期値を変えることによって値がきちんと求めることができるかと、収束のスピードを見ていきたいと思います。</p>
+<p>また、収束したとは正確な値との差が非常に小さくなった時とします。
+しかし、その差の基準はいったいどうすれば良いでしょうか？</p>
+<p>まず、$x_k$ は常に求めたい数より大きくなる、また $n$ が増加するにつれて $x_k$ は小さくなって求めたい数に近づく、という二つの事象から次の $x_{k+1}$ との差が非常に小さいとき、ほとんど近似できた、すなわち、
+$( x_k - x_{k+1} ) &lt; \epsilon$ （$k$:自然数、$\epsilon$:計算精度を決める非常に小さな定数）を満たしたら近似できたということにしましょう。</p>
+<p>ここで、1 回の計算にかかる時間はほぼ同じと言えるので、上記の条件式を満たすようになるまでに計算した回数が小さいほど収束が早いといえます。</p>
+<p>近似できたのが何回目の操作であるかも表示するプログラムの一例を以下に示します。</p>
+<pre><code class="language-cpp">// コード(cpp)
+#include &lt;bits/stdc++.h&gt; // おまじない
+using namespace std;
+
+// プログラムのはじまり
+int main() {
+
+  double ans = 20; // x1の値
+  int i;
+
+  // 十分な回数(10000回)繰り返す
+  for(i = 0; i &lt; 10000; i++){
+    double tmp = ans;
+
+    // ニュートン法の式の通りに値を更新
+    ans = ans -((ans*ans) - 2)/(2*ans);
+
+    // 差が0.0000001になったら計算終了
+    if(tmp - ans &lt;= 0.0000001) break;
+  }
+
+  // ansの値と誤差が小さくなった時のiを表示
+  printf(&quot;%.15f\n%d\n&quot;,ans,i);
+
+} // プログラムの終わり
+</code></pre>
+<p>このプログラムを用いることで、計算にかかった回数 = 速度が分かります。</p>
+<table><thead><tr><th>x₁ の値</th><th>計算した回数</th></tr></thead><tbody>
+<tr><td>2</td><td>4</td></tr>
+<tr><td>20</td><td>7</td></tr>
+<tr><td>200</td><td>11</td></tr>
+<tr><td>2000</td><td>14</td></tr>
+<tr><td>20000</td><td>17</td></tr>
+<tr><td>200000</td><td>21</td></tr>
+</tbody></table>
+<p>初期値が求める値に近いほど収束するスピードが早いことが分かります。まあ、当たり前と言えばあたりまえなのですが。</p>
+<p>例えば、ある初期値 $x_1$ によって得られる $x_2$ が別の初期値 $x'_1$ と同じになった時、単純に計算にかかる時間は 1 回分短くなります。</p>
+<h2 id="応用方法"><a class="header" href="#応用方法">応用方法</a></h2>
+<p>実は、このニュートン法は $\sqrt{2}$ の時だけでなく、$\sqrt{n}$ ( $n$ は任意の正の実数)のときにも成り立ちます。</p>
+<p>さらにいうと、これは 2 乗根の時だけではなく 1.5 乗根、3 乗根、4 乗根、...$m$ 乗根( $m$ は任意の正の実数)の時にもすべて成り立ちます。</p>
+<p>これは、最初に求めた式 $x_{n+1}  =  x_n  - f( x_n) / f'( x_{n+1})$ をもとに、2 次式が成り立つことが分かります。</p>
+<p>この式の $f(x)$ の次数を変えても、(例えば $f(x) = x^3 - 2$ のときでも)成り立ちます。</p>
+<p><img src="./fig3.png" alt="3次関数の場合の様子" />{width=250}</p>
+<p>したがって、$\sqrt[k]{m}$ ( $k,m$ はともに任意の正の実数)の値も同様の方法で近似することができます。ニュートン法の式 $x_{n+1} = x_n - f( x_n) / f'( x_n)$ を用いることは変わらないので
+$\sqrt[k]{c}$ を求める場合、$f(x) = x^k - c$ とおいて、少し変えると作ることが出来ます。</p>
+<p>また、前節では調べる数字を $\sqrt{2}$ のみに絞って考えているため変数が少なかったのですが、ここで「何乗根であるか？」と「根の中の数字」を表す変数を追加し、新たにコードを書き直します。</p>
+<p>コードは以下の通りになります。</p>
+<pre><code class="language-cpp">// コード(cpp)
+#include &lt;bits/stdc++.h&gt; // おまじない
+using namespace std;
+
+// プログラムのはじまり
+int main() {　
+
+  double ans = 20; // 初期値
+  double  k = 3;   // 何乗根か？
+  double  c = 2;   // 根の中の数字は何か？
+
+  // 十分な回数(10000回)繰り返す
+  for (int i = 0;i &lt; 10000; i++){
+
+    // ニュートン法の式の通りに値を更新
+    ans = ans -(pow(ans,k)-c)/(k*pow(ans,k-1));
+
+  }
+
+  // 小数第15位までansの数字を表示する
+  printf(&quot;%.15f\n&quot;,ans);
+
+} // プログラムの終わり
+</code></pre>
+<p>この時、$f'(x) = kx^{k-1}$ であるから、累乗をプログラムで表現する必要が出てきます。
+そこで、$a^b$ を <code>pow(a,b)</code> という標準の関数で計算します。</p>
+<p>次節では収束条件とその証明を書きます。</p>
+<h2 id="収束条件とその証明"><a class="header" href="#収束条件とその証明">収束条件とその証明</a></h2>
+<blockquote>
+<p><strong>収束条件</strong>：
+$f(x_0) &gt; 0、f(a) &lt; 0、f'(x) &gt; 0、f''(x) &gt; 0$ の全てを満たす。</p>
+</blockquote>
+<p>すなわち、$x$ についての閉区間 $[a,x_0]$ において $f(x)$ が下に凸な単調増加なグラフであり、$f(x) = 0$ を満たす解が一つある状態です。</p>
+<hr class="page-wrap" />
+<blockquote>
+<p><strong>証明</strong></p>
+<p>$x$ が区間 $[a,x_0]$ にある時、$f''(x) &gt; 0$ より
+$$\int_{x}^{x_0}f''(x)dx &gt; 0$$
+が成り立つ。</p>
+<p>計算し、式を変形すると　$f'(x) &lt; f'(x_0)$ したがって
+$$\int_{x}^{x_0}f'(x)dx &lt; \int_{x}^{x_0}f'(x_0)dx $$
+が成り立つ。</p>
+<p>計算すると
+$$f(x_0) - f(x) &lt; f'(x_0)(x_0-x)$$</p>
+<p>ここで $f(a) &lt; 0 &lt; f(x_0)$ が成り立つから中間値の定理より
+$f(\alpha) = 0$ を満たす $\alpha$ が区間 $(a,x_0)$ に存在する。</p>
+<p>また、関数 $f(x)$ は単調増加関数であるから、逆関数が存在する。
+（区間 $[a、x_0]$ において $f(k) = f(l)$ でかつ $k\neq l$ を満たす数が存在しないものを逆関数という。）</p>
+<p>よって　$f^{-1}(x)$ を $f(x)$ の逆関数とすると　$\alpha = f^{-1}(0)$ と表せる。</p>
+<p>ここで $x = \alpha$ とおくと
+$$f(x_0)-f(\alpha) &lt; f'(x_0)(x_0-\alpha)$$</p>
+<p>ここで $f(\alpha) = 0, f'(x) &gt; 0, f(x_0) &gt; 0$より
+$$\alpha &lt; x_0 - \frac{f(x_0)}{f'(x_0)} &lt; x_0$$</p>
+<p>また、$x_0 - f(x_0)/f'(x_0) = x_1$ より
+$$\alpha &lt; x_1 &lt; x_0$$</p>
+<p>これを繰り返すことによって $\alpha &lt; \cdots &lt; x3 &lt; x2 &lt; x1$</p>
+<p>また、$x$ は単調減少であり下限があるため数列 ${x_n}$ は収束する。ここで数列 ${x_n}$ が $\beta$ に収束するとする。</p>
+<p>$x_{n+1} = x_n - f(x_n) / f'(x_n)$ より</p>
+<p>$$\lim_{n \to \infty} x_{n+1} = \lim_{n \to \infty}(x_n - \frac{f( x_n)}{f'( x_n)})$$</p>
+<p>ここで $\lim_{n \to \infty}x_n = \beta, \lim_{n \to \infty}x_{n+1} = \beta$ であるから
+$$\beta = \beta - \frac{f(\beta)}{f'(\beta)}$$</p>
+<p>これより $f(\beta) = 0$</p>
+<p>関数 $f(x)$ は逆関数を持つため $\beta = f^{-1}(0)$
+よって
+$$\beta = \alpha \quad (\because \alpha = f^{-1}(0))$$</p>
+<p>したがって、数列 ${x_n}$ は $\alpha$ に収束し、$f(\alpha) = 0$ となるので</p>
+<p>ニュートン法の数列 ${x_n}$ は「 $f(x_0) &gt; 0, f(a) &lt; 0, f'(x) &gt; 0, f''(x) &gt; 0$ の全てを満たす」とき
+$f(x) = 0$ の解 $\alpha \quad (a &lt; \alpha &lt; x_0)$ に収束する。$\quad \blacksquare$</p>
+</blockquote>
+<h2 id="おわりに"><a class="header" href="#おわりに">おわりに</a></h2>
+<p>プログラミングと聞くと、難しくて初心者にはできないものだと考えてしまうかもしれませんが、この記事のように簡単な計算や、文字を表示させるなど、単純な動作だけなら今すぐにでも実装・実行できます。</p>
+<p>それに、今の時代コンパイラはオンライン上のものを使うこともでき、インターネットで検索すれば実装方法も簡単に見つけることができますし、自分でアレンジすることができます。</p>
+<p>ぜひ、皆さんも簡単なプログラムから初めて、自分の作りたいものを作りましょう！</p>
+<h2 id="参考文献等"><a class="header" href="#参考文献等">参考文献等</a></h2>
+<ol>
+<li>ニュートン法 wikipedia<br />
+https://ja.wikipedia.org/wiki/ニュートン法</li>
+<li>ニュートン法とは？ ～定義と性質～ - 理数アラカルト<br />
+https://risalc.info/src/newtons-method-properties.html</li>
+<li>グラフ作成 Geogebra<br />
+https://www.geogebra.org/calculator</li>
+<li>今回使用したオンラインコンパイラ : paiza.io<br />
+https://paiza.io/ja</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../../../../magazine/2022/contents/hnm2022/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../../../../magazine/2022/contents/fe-ap/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../../../../magazine/2022/contents/hnm2022/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../../../../magazine/2022/contents/fe-ap/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>
