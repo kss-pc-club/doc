@@ -9,7 +9,7 @@
 
 - [Zenn](https://zen.dev)
 - [Qiita](https://qiita.com)
-- [techfeed](https://techfeed.io/categories/all)
+- [TechFeed](https://techfeed.io/categories/all)
 
 ### オンラインコンパイラ
 
@@ -56,7 +56,7 @@
 
 入門者向けサイト
 
-- [cpp の歩き方](https://cppmap.github.io/)
+- [cppmap C++の歩き方](https://cppmap.github.io/)
 - [ゼロから学ぶ C++](https://rinatz.github.io/cpp-book/)
 - [cpprefjp C++日本語リファレンス](https://cpprefjp.github.io/)
 - [江添亮の入門 C++](https://cpp.rainy.me/)
@@ -90,10 +90,10 @@
 - [ちいさな Web ブラウザを作ろう](https://browserbook.shift-js.info/)
   レンダリングのための字句解析等を行う。seccamp2021 演習資料。
 
-### Git,Github
+### Git, GitHub
 
-- [Github Skills](https://skills.github.com/)
-- [Github Docs](https://docs.github.com/ja)
+- [GitHub Skills](https://skills.github.com/)
+- [GitHub Docs](https://docs.github.com/ja)
 
 ### ネットワーク技術
 
