@@ -13,6 +13,7 @@
   - [サイト](./share-article/site.md)
   - [ソフト](./share-article/application.md)
   - [拡張機能](./share-article/extension.md)
+- [メディアリスト](./medialist/index.md)
 - [部誌](./magazine/index.md)
   - [2022](./magazine/2022/index.md)
     - [はじめに](./magazine/2022/contents/foreword.md)
