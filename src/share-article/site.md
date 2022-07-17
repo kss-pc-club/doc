@@ -9,7 +9,18 @@
 
 - [Zenn](https://zen.dev)
 - [Qiita](https://qiita.com)
+
+### テックメディア
+
+- [gihyo.jp](https://gihyo.jp/)
 - [TechFeed](https://techfeed.io/categories/all)
+- [さくらのナレッジ](https://knowledge.sakura.ad.jp/)
+
+### 新卒研修資料
+
+- [mixi](https://mixi-developers.mixi.co.jp/22-technical-training-5fc362a9dc41)
+- [リクルート](https://blog.recruit.co.jp/rtc/2021/08/20/recruit-bootcamp-2021/)
+- [サイボウズ](https://blog.cybozu.io/entry/2022/06/23/170000)
 
 ### オンラインコンパイラ
 
@@ -35,6 +46,7 @@
 ### Web デザイン
 
 - [ヒューマンインターフェース ガイドライン](https://www.sociomedia.co.jp/category/shig)
+- [Canva](https://www.canva.com/)
 
 ### 映像制作
 
@@ -44,6 +56,7 @@
 ### JavaScript
 
 - [JavaScript Primer](https://jsprimer.net/)
+- [JavaScript Info](https://ja.javascript.info/)
 
 ### TypeScript
 
@@ -52,6 +65,12 @@
 ### React
 
 - [React 公式ドキュメント](https://ja.reactjs.org/)
+
+### Node パッケージマネージャ
+
+- [npm](https://www.npmjs.com/)
+- [yarn](https://yarnpkg.com/)
+- [npm trends](https://npmtrends.com/)
 
 ### C
 
@@ -78,6 +97,12 @@
 - [最近の C++ (2022 年)](https://speakerdeck.com/cpp/tfcon-2022-cpp)
 - [C++でクリーンなコードの書き方](https://qiita.com/elipmoc101/items/01003c82dbd2e464a071)
 
+### Python
+
+- [Python プログラミング入門 - PDF(東京大学)](https://utokyo-ipp.github.io/IPP_textbook.pdf)
+- [Python プログラミング入門 - Colab(東京大学)](https://colab.research.google.com/github/utokyo-ipp/utokyo-ipp.github.io/blob/master/colab/index.ipynb)
+- [プログラミング演習 Python 2021(京都大学)](https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/265459/1/Version2021_10_08_01.pdf)
+
 ### 競技プログラミング
 
 - [AtCoder](https://atcoder.jp/)
@@ -94,6 +119,10 @@
 
 - [ちいさな Web ブラウザを作ろう](https://browserbook.shift-js.info/)
   レンダリングのための字句解析等を行う。seccamp2021 演習資料。
+
+### 機械学習
+
+- [機械学習帳](https://chokkan.github.io/mlnote/index.html)
 
 ### Git, GitHub
 
