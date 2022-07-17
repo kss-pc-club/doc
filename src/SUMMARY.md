@@ -6,6 +6,7 @@
 [リンク](./link.md)
 
 - [自己紹介](./self-introduction/index.md)
+  - [nagaso.cpp](./self-introduction/6th/Nagaso.cpp/index.md)  
   - [eno1220](./self-introduction/6th/eno1220/index.md)
   - [hrkn63-hnm](./self-introduction/6th/s-i-hrkn63-hnm/index.md)
 - [共有]()
